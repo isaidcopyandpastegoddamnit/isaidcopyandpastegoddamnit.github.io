@@ -15,7 +15,7 @@ function strobe()
  {
   document.body.style.backgroundColor=text1;
   document.body.style.color=text2;
-  alert("The else statement was executed...boolean_value2 evaluates to false");
+  // alert("The else statement was executed...boolean_value2 evaluates to false");
  }
 }
 
