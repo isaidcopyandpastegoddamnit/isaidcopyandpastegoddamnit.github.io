@@ -11,12 +11,19 @@ if (params.has('bg')) {
     delay_back = params.get('bg');
 }
 if (params.has('seizureMode') ) {
-    delay_back = 100;
-    delay_front = 0;
+    delay_back = 0;
+    delay_front = 1000;
 }
 function strobe_back(){
     var idx = Math.floor((Math.random()*colors.length));
-    document.body.style.backgroundColor = colors[idx];
+    bg_idx++;
+    if (bg_idx % 1000 == 0) {
+        document.body.style.backgroundImage = 'url(http://allhdwallpapers.com/wp-content/uploads/2015/04/the-exorcist-5.jpg)';
+    } else if (bg_idx % 1000 == 10) {
+        document.body.style.backgroundImage = null;
+    } else {
+        document.body.style.backgroundColor = colors[idx];
+    }
     setTimeout(strobe_back, delay_back); //in milliseconds
 }
 function strobe_front() {
